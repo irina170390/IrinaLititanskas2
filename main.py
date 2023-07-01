@@ -23,3 +23,22 @@ elif a_int <= 11:
 else:
     print("Не знайдено")
 
+
+x = int(input("x: "))
+y = int(input("y: "))
+if x > 0 and y > 0:
+    print('first')
+elif x > 0 and y < 0:
+    print('second')
+elif x < 0 and y < 0:
+    print('third')
+elif x < 0 and y > 0:
+    print('fourth')
+elif x == 0 and y != 0:
+    print('on x line')
+elif x != 0 and y == 0:
+    print('on y line')
+else:
+    print('on middle spot')
+
+
