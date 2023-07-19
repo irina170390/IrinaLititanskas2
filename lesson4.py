@@ -29,8 +29,6 @@ print(tpl_sort((5, 7, 9, 2, 3)))
 
 
 
-
-
 def multiple_named_parameters(**user_info):
     for key, value in user_info.items():
         print(f'{key} : {value}')
