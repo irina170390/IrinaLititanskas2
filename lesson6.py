@@ -51,28 +51,6 @@ print(string_cp)
 
 
 
-import re
-
-txt = "example (.com)", "github (.com)", "stackoverflow (.com)"
-out = re.sub(r'\([^)]*\([^)]*\([^)]', '', txt)
-print(out)
-
-my_string = "example (.com)", "github (.com)", "stackoverflow (.com)"#input()
-
-a=my_string.find('(')
-b=my_string.find(')')
-
-result_string = my_string[0:a] + my_string[b+1:len(my_string)]
-print(result_string)
-
-
-
-
-
-
-
-
-
 
 
 
