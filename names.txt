@@ -1,4 +1,2 @@
-Petr
-Dima
-Artem
-Ivan
+1,Johnson,Canada
+2,Smith,USA

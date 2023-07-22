@@ -14,25 +14,19 @@ print(get_domains("next/domains.txt"))
 
 
 
-
-
-
-
+def write_data(filename):
+    with open(filename, 'w') as file:
+        file.writelines(['1,Johnson,Canada\n','2,Smith,USA'])
 def get_second_names(filename):
     result = []
-    with open(filename, 'r') as file:
-      for line in file.readlines():
-       result.append(line.split [1])
-    return result
     with open(filename, "r") as file:
-        return [line.split [1] for line in file.readlines()]
+     for line in file.readlines():
+      result.append(line.split(',')[1])
+     return result
+
+write_data('names.txt')
 
 print(get_second_names('names.txt'))
-
-
-
-
-
 
 
 
