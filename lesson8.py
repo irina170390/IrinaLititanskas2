@@ -232,4 +232,49 @@ print("Output 2:", d)
 d = date_time.strftime("%X")
 print("Output 3:", d)
 
+# Python3 code to  calculate age in years
+
+from datetime import date
+
+
+def calculateAge(birthDate):
+    today = date.today()
+    age = today.year - birthDate.year
+    ((today.month, today.day) <
+     (birthDate.month, birthDate.day))
+
+
+    return age
+
+# Driver code
+print(calculateAge(date(1990, 2, 3)), "years")
+
+
+from datetime import datetime
+start_date = datetime(2010,4,28,12,33)
+end_date = datetime(2010,5,5,23,14)
+difference = end_date - start_date
+difference_in_years = (difference.days + difference.seconds/86400)/365.2425
+print(difference)
+print(difference_in_years)
+
+import datetime
+dob = datetime.date(1980, 10, 10)
+
+def age():
+    today = datetime.date.today()
+    years = today.year - dob.year
+    if today.month < dob.month or (today.month == dob.month and today.day < dob.day):
+        years -= 1
+    return years
+print(age())
+def age2():
+    today = datetime.date.today()
+    this_year_birthday = datetime.date(today.year, dob.month, dob.day)
+    if this_year_birthday < today:
+        years = today.year - dob.year
+    else:
+        years = today.year - dob.year - 1
+    return years
+print(age2())
 
