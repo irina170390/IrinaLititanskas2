@@ -23,6 +23,29 @@ print(tpl_sort((3, 6, 5, 8, 7)))
 print(tpl_sort((5, 7, 9, 2, 3)))
 
 
+OneList = [3, 6, 5, 8, 7]
+TwoList = [5, 7, 9, 2, 3]
+resultList = []
+text = ""
+
+OneList.sort()
+TwoList.sort()
+
+print("One List: " + str(OneList))
+print("Two List: " + str(TwoList))
+
+for i in OneList:
+    if (i not in TwoList):
+        resultList.append(i)
+        resultList.sort()
+
+for i in resultList:
+    i = resultList.index(i)
+    text += str(resultList[i]) + ", "
+
+print("Result: " + str(text))
+
+
 
 
 
@@ -49,8 +72,17 @@ sortedIds = sorted(marks.keys(), key=lambda studentId: mean(marks[studentId]))
 print('Средний бал :', sortedIds[1])
 
 
+sum_of_all_marks = 0
 
+for dict_value in marks.values():
 
+ sum_of_all_marks += 5
+ average_mark = sum_of_all_marks / len(marks)
+ for mark in marks:
+
+    if marks[mark] > average_mark:
+
+     print(mark)
 
 
 
@@ -71,10 +103,7 @@ print(location)
 
 random_people = {'name': names[name_index], 'surname' : surname[surname_index], 'location':location[location_index]}
 
-keys = ['name', 'surname', 'location']
-values = ['alex', 'Budu', 'Florence']
-info = dict(zip(keys, values))
-print(info)
+
 
 
 
