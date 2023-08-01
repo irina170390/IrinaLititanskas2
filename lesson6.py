@@ -117,7 +117,7 @@ print(capital_words_spaces("Python"))
 print(capital_words_spaces("PythonExercises"))
 print(capital_words_spaces("PythonExercisesPracticeSolution"))
 
-import re
+
 
 
 def putSpace(input):
