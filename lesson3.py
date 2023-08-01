@@ -1,21 +1,21 @@
 value = []
 
 while True:
-    print(sorted(value, key=len, reverse=True))
-value_temporary = input()
-if value_temporary == 'add':
+    #print(sorted(value, key=len, reverse=True))
+    value_temporary = input()
+    if value_temporary == 'add':
         value_to_add = input('введіть нотатку')
         value.append(value_to_add)
-elif value_temporary == 'earliest':
+    elif value_temporary == 'earliest':
           print(value)
-elif value_temporary == 'latest':
+    elif value_temporary == 'latest':
           print(list(reversed(value)))
-elif value_temporary == 'longest':
-    print(sorted(value, key=len, reverse=True))
-elif value_temporary == 'shortest':
-          print(value.reverse())
-elif value_temporary == 'Exit':
-          print(value.reverse())
+    elif value_temporary == 'longest':
+          print(sorted(value, key=len, reverse=True))
+    elif value_temporary == 'shortest':
+          print(sorted(value, key=len))
+    elif value_temporary == 'Exit':
+          break
 
 
 values = ['this is note', 'this is notissimo', 'note', 'this is a huge long, insanely long note', 'well, anyways']
@@ -27,7 +27,7 @@ values = ['this is note', 'this is notissimo', 'note', 'this is a huge long, ins
 values_numbers = []
 for element in values:
     values_numbers.append(len(element))
-print(values_numbers)
+    print(values_numbers)
 
 
 second_element = {'this is note', 'this is notissimo'}

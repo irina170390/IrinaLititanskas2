@@ -76,13 +76,14 @@ sum_of_all_marks = 0
 
 for dict_value in marks.values():
 
- sum_of_all_marks += 5
+ sum_of_all_marks += dict_value[0]
+
  average_mark = sum_of_all_marks / len(marks)
- for mark in marks:
+ for mark_key, mark_value in marks.items():
 
-    if marks[mark] > average_mark:
+    if mark_value[0] > average_mark:
 
-     print(mark)
+     print(mark_key)
 
 
 
