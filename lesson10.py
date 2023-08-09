@@ -23,11 +23,9 @@ class  Car:
     def refuel(self):
         pass
 
-
 class Car(ABC):
     def mileage(self):
         pass
-
 
 class Tesla(Car):
     def mileage(self):
@@ -56,14 +54,44 @@ class Auto(Tesla,Suzuki,Duster,Renault):
     def mileage_from_second_parent(self):
         Renault.mileage(self)
 
+class Engineer(Tesla):
+    def __init__(self, salary, position):
+        super().__init__(salary, position)
+
+    def do_work(self):
+        print('I`m doing Tesla stuff')
+
+class Tesla(object):
+    """docstring"""
+
+    def __init__(self, color, tires):
+     """Constructor"""
+     self.color = color
+     self.tires = tires
+
+    def brake(self):
+     """
+     Stop the car
+     """
+     return "Braking"
+
+    def drive(self):
+     """
+     Drive the car
+     """
+     return "I'm driving!"
+
+
+class Functools(Tesla):
+    def open_window(self):
+        print('window is opened')
+    def door_close(self):
+        print('the door is closed')
 
 
     # Driver code
 
-
-t = Tesla()
-t.mileage()
-
+t = Tesla('white', 4)
 r = Renault()
 r.mileage()
 
