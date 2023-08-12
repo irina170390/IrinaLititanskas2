@@ -13,7 +13,6 @@ class Car(ABC):
     def refuel(self):
         pass
 
-    @abstractmethod
     def open_window(self):
         print('window is opened')
 
@@ -32,14 +31,14 @@ class Gasoline(Car):
     def __init__(self, wheels, color, fuel_type):
         super().__init__(wheels, color, fuel_type)
 
-        def go_straight(self):
-            print('car going straight')
+    def go_straight(self):
+        print('car going straight')
 
-        def refuel(self):
-            print('car fueled')
+    def refuel(self):
+        print('car fueled')
 
-gasoline_carGasoline: (5, 'white', 'gasoline')
-electro_carElectro: (5, 'black', 'electricity')
+gasoline_car = Gasoline(5, 'white', 'gasoline')
+electro_car = Electro(5, 'black', 'electricity')
 gasoline_car.go_straight()
 gasoline_car.refuel()
 gasoline_car.open_window()
