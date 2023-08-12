@@ -13,14 +13,15 @@ class Museum(ABC):
 
     @name.setter
     def name(self, new_name):
+        self.__name=new_name
 
-     @abstractmethod
-     def add_painting(self):
-         pass
+    @abstractmethod
+    def add_painting(self):
+     pass
 
      @staticmethod
-     def painting_between_sculpture(painting, sculpture):
-         new_painting = painting / sculpture
+     def painting_between_sculpture(a,b):
+         new_painting = a / b
          return new_painting
 
 
@@ -43,16 +44,16 @@ class Artwork:
         print(f"Maintaining {self.title} by {self.artist}")
 
 
-    class IArtwork(ABC):
-        """interface of artwork"""
+class IArtwork(ABC):
+    """interface of artwork"""
 
-        @abstractmethod
-        def display(self):
-            """"""
+    @abstractmethod
+    def display(self):
+        """"""
 
-        @abstractmethod
-        def accept(self, visitor):
-            """"""
+    @abstractmethod
+    def accept(self, visitor):
+        """"""
 
 class Painting(Artwork):
 
@@ -81,7 +82,7 @@ class Installation(Artwork):
         print(f"Maintaining {self.title} by {self.artist}")
 
 
-class Museum:
+class Museum1:
     """object structure"""
 
     def __init__(self):
@@ -103,24 +104,30 @@ class Museum:
 def run_a_museum():
     # create objects
     painting = Painting("No1","Mark Rothko")
+    artwork = Artwork('a', 'b')
+    artwork.protect()
+    painting.protect()
     sculpture = Sculpture("David", "Michelangelo")
     installation = Installation("La Menesunda","Marta Minujín")
     # create museum
-    museum = Museum()
+    museum = Museum1()
     museum.add_artwork(painting)
     museum.add_artwork(sculpture)
     museum.add_artwork(installation)
 
-    arts = Museum.get_artworks()
+    arts = museum.get_artworks()
+    print(arts)
     for art in arts:
-         art.display()
-    if isinstance(art, Painting):
-         art.protect()
-    elif isinstance(art, Sculpture):
-         art.clean()
-    elif isinstance(art, Installation):
-         art.maintain()
-         run_a_museum()
+        art.display()
+        if isinstance(art, Painting):
+            art.protect()
+        elif isinstance(art, Sculpture):
+            art.clean()
+        elif isinstance(art, Installation):
+            art.maintain()
+
+
+run_a_museum()
 
 
 
