@@ -1,15 +1,20 @@
 import datetime
 from abc import ABC, abstractmethod
 import datetime
+current_station = ''
 
 class Train:
-  def __init__(self, name, destination, place, number, starttime, time):
+  def __init__(self, name, destination, place, number, starttime):
     self.name = name
     self.destination = destination
     self.place = place
     self.number = number
     self.starttime = starttime
-    self.time = time
+    self.stations = []
+
+
+  def station_setup(self, stations):
+    self.stations = stations
 
   def get_num(self):
       return self.number
@@ -20,21 +25,22 @@ class Train:
   def get_time(self):
     return self.starttime
 
-  def __init__(self, destination: str, number: str, departure: str):
-      self.destination, self.number, self.departure = destination, number, departure
 
   def __repr__(self) -> str:
-    return f"{self.__class__.__name__}({self.number}, {self.destination}, {self.departure})"
+    return f"{self.__class__.__name__}({self.number}, {self.destination})"
 
   def __str__(self) -> str:
     return self.__repr__()
 
-class TrainCar :
-  def __init__(self, name, destination, place):
+class TrainCart :
+  def __init__(self, name, destination, place, stages = []):
     self.name = name
-    self.destination = destination
-    self.place = place
-    self.stages = {}
+    self.stages = stages
+
+  def remove_passanger(self):
+    for passanger in stages:
+      if passanger.destination == current_station
+        stages.pop(passanger)
 
 
   def __len__(self):
@@ -42,6 +48,12 @@ class TrainCar :
 
   def __str__(self):
     return f"{self.name}({self.destination}{self.place})"
+
+class Passenger:
+  def __int__(self, name, destination, start_station):
+    self.name = name
+    self.destination = destination
+    self.start_start_start_station
 TrainCar1 = ("John Dow",  "Name of station", 1)
 TrainCar2 = ("Alicja Sklorz",  "Name of station", 2)
 TrainCar3 = ("Urszula John",  "Name of station", 3)
@@ -53,6 +65,7 @@ TrainCar8 = ("Ryszard Pagacz",  "Name of station", 8)
 TrainCar9 = ("Józef Dziurzycki",  "Name of station", 9)
 TrainCar10 = ("Bogdan Szczepanik",  "Name of station", 10)
 TrainCar11 = ["John Dow", "Alicja Sklorz", "Urszula John", "Irena Cieślik", "Eugenia Szkotak", "Jan Poliwoda", "Alfred Lubos", "Ryszard Pagacz", "Józef Dziurzycki", "Bogdan Szczepanik"]
+train_car_12 = TrainCart(12, '', '', [Passenger("John Dow", "Лондон", "Гогвортс"), Passenger("Alicja Sklorz", "Kyiv", "Odessa"), Passenger("Urszula John", "Lviv", "Warszawa")])
 len(TrainCar11)
 print(TrainCar11)
 print(TrainCar1)
@@ -61,7 +74,7 @@ print(TrainCar3)
 print(TrainCar4)
 print(TrainCar5)
 print(TrainCar6)
-print(TrainCar)
+print(TrainCar7)
 print(TrainCar8)
 print(TrainCar9)
 print(TrainCar10)
