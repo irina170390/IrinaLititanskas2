@@ -11,6 +11,9 @@ class Train:
     self.number = number
     self.starttime = starttime
     self.stations = []
+  numbers = list(range(1,12))
+  print(numbers)
+
 
 
   def station_setup(self, stations):
@@ -39,8 +42,8 @@ class TrainCart :
 
   def remove_passanger(self):
     for passanger in stages:
-      if passanger.destination == current_station
-        stages.pop(passanger)
+     if passanger.destination == current_station:
+       stages.pop(passanger)
 
 
   def __len__(self):
@@ -53,19 +56,20 @@ class Passenger:
   def __int__(self, name, destination, start_station):
     self.name = name
     self.destination = destination
-    self.start_start_start_station
-TrainCar1 = ("John Dow",  "Name of station", 1)
-TrainCar2 = ("Alicja Sklorz",  "Name of station", 2)
-TrainCar3 = ("Urszula John",  "Name of station", 3)
-TrainCar4 = ("Irena Cieślik",  "Name of station", 4)
-TrainCar5 = ("Eugenia Szkotak",  "Name of station", 5)
-TrainCar6 = ("Jan Poliwoda",  "Name of station", 6)
-TrainCar7 = ("Alfred Lubos",  "Name of station", 7)
-TrainCar8 = ("Ryszard Pagacz",  "Name of station", 8)
-TrainCar9 = ("Józef Dziurzycki",  "Name of station", 9)
-TrainCar10 = ("Bogdan Szczepanik",  "Name of station", 10)
+    self.start_start = start_station
+
+TrainCar1 = ("John Dow", 1)
+TrainCar2 = ("Alicja Sklorz", 2)
+TrainCar3 = ("Urszula John", 3)
+TrainCar4 = ("Irena Cieślik", 4)
+TrainCar5 = ("Eugenia Szkotak", 5)
+TrainCar6 = ("Jan Poliwoda", 6)
+TrainCar7 = ("Alfred Lubos", 7)
+TrainCar8 = ("Ryszard Pagacz", 8)
+TrainCar9 = ("Józef Dziurzycki", 9)
+TrainCar10 = ("Bogdan Szczepanik", 10)
 TrainCar11 = ["John Dow", "Alicja Sklorz", "Urszula John", "Irena Cieślik", "Eugenia Szkotak", "Jan Poliwoda", "Alfred Lubos", "Ryszard Pagacz", "Józef Dziurzycki", "Bogdan Szczepanik"]
-train_car_12 = TrainCart(12, '', '', [Passenger("John Dow", "Лондон", "Гогвортс"), Passenger("Alicja Sklorz", "Kyiv", "Odessa"), Passenger("Urszula John", "Lviv", "Warszawa")])
+train_car_12 = TrainCart(12, '', '', [Passenger("John Dow", "Лондон-Гогвортс", 1), Passenger("Alicja Sklorz", "Лондон-Гогвортс", 2), Passenger("Urszula John", "Лондон-Гогвортс", 3)])
 len(TrainCar11)
 print(TrainCar11)
 print(TrainCar1)
