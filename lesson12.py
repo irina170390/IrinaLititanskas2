@@ -41,9 +41,9 @@ class TrainCart :
     self.stages = stages
 
   def remove_passanger(self):
-    for passanger in stages:
+    for passanger in self.stages:
      if passanger.destination == current_station:
-       stages.pop(passanger)
+       self.stages.pop(passanger)
 
 
   def __len__(self):
@@ -69,7 +69,7 @@ TrainCar8 = ("Ryszard Pagacz", 8)
 TrainCar9 = ("Józef Dziurzycki", 9)
 TrainCar10 = ("Bogdan Szczepanik", 10)
 TrainCar11 = ["John Dow", "Alicja Sklorz", "Urszula John", "Irena Cieślik", "Eugenia Szkotak", "Jan Poliwoda", "Alfred Lubos", "Ryszard Pagacz", "Józef Dziurzycki", "Bogdan Szczepanik"]
-train_car_12 = TrainCart(12, '', '', [Passenger("John Dow", "Лондон-Гогвортс", 1), Passenger("Alicja Sklorz", "Лондон-Гогвортс", 2), Passenger("Urszula John", "Лондон-Гогвортс", 3)])
+Train_car_12 = TrainCart(12, '', '', [Passenger("John Dow", "Лондон-Гогвортс", 1), Passenger("Alicja Sklorz", "Лондон-Гогвортс", 2), Passenger("Urszula John", "Лондон-Гогвортс", 3)])
 len(TrainCar11)
 print(TrainCar11)
 print(TrainCar1)
