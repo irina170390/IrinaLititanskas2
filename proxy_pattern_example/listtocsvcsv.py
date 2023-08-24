@@ -2,7 +2,7 @@ import csv
 
 def add_row():
     kate = ['Kate', 33, 'google', 'Paris'],
-    with open('listtocsv.csv', 'w') as file:
+    with open('listtocsvcsv', 'w') as file:
        writer = csv.writer(file)
        writer.writerow(kate)
 
