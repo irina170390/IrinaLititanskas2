@@ -20,19 +20,15 @@ def remove_row():
     del lines[1]
     with open("listtocsv.csv", "w") as file:
         file.writelines(lines)
-        
 
 
 
 
-
-
-def usunPsa(self, ImiePsa):
-
-    with open('schronisko.csv', 'rb') as input, open('schronisko.csv', 'wb') as output:
+def remove2_row(self, row):
+    with open('listtocsv.csv', 'r') as input, open('listtocsv.csv', 'w') as output:
         writer = csv.writer(output)
         for row in csv.reader(input):
-                if row[0] == ImiePsa:
+                if row[0] == row:
                     writer.writerow(row)
     with open(self.plik, 'r') as f:
             print(f.read())
