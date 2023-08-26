@@ -1,5 +1,15 @@
 class b:
     x = 5
+y = b()
+isinstance(y,b)
+
+isinstance(b, object)
+# True
+type(b) == object
+# False
+issubclass(type(b), object)
+# True
+
 
 class a:
     list1 = []  # При объявлении свойства класса self не применяется
