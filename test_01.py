@@ -69,6 +69,6 @@ def test_05():
     header_locator = "//h1"
     second_page = driver.find_element(by='xpath', value=header_locator)
     assert second_page.text == 'Telefon komórkowy Samsung Galaxy A34 5G 6/128GB grafitowy (SM-A346BZKAEUE)'
-    
+
 
 
