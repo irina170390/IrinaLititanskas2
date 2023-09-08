@@ -2,6 +2,9 @@ from selenium.webdriver import Chrome
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 import time
+#python_search_element = driver.find_element(by='xpath', value=python_search_result_locator)
+#python_search_element.click()
+
 
 
 
@@ -28,7 +31,10 @@ def test_02():
     element.send_keys('Torba na laptopa Targus Notebook Case 16" czarna (CN31)')
     action = ActionChains(driver)
     action.key_down(Keys.CONTROL).send_keys('a').key_up(Keys.CONTROL).perform()
+    time.sleep(3)
     action.key_down(Keys.CONTROL).send_keys('x').key_up(Keys.CONTROL).perform()
+    time.sleep(5)
+
 
 
 def test_03():

@@ -6,7 +6,7 @@ import pytest
 @pytest.fixture(scope='session')
 def driver():
     driver = Chrome()
-    driver.get('https://rozetka.com.ua/')
+    driver.get('https://rozetka.pl/')
     driver.maximize_window()
 
     yield driver

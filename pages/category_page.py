@@ -13,3 +13,4 @@ class CategoryPage(BasePage):
 
     def filter_new(self):
         self.click_on_element(self.locators.checkbox_new)
+
