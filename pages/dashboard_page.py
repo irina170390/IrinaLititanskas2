@@ -1,19 +1,20 @@
 from pages.base_page import BasePage
 from pages.category_page import CategoryPage
-from core.dashboard_locators import DashboardLocators
+from core.dashboard_locators import dashboard_locators_dict
 
 class Dashboard(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
-        self.go_to_bags_and_backpacks_locator = ('xpath', '//a[@href="https://rozetka.pl/torby-plecaki-i-etui-na-laptopy-80036/c80036/"]/a[@href="https://rozetka.pl/akcesoria-elektroniczne-80256/c80256/"]')
+        self.go_to_bags_and_backpacks_locator = ('xpath', '//div[@class="header-layout"]')
+        self.popular_categories_bags = ('xpath', '//a[@class="menu__link"][@href="https://rozetka.pl/torby-plecaki-i-etui-na-laptopy-80036/c80036/"]')
 
     def go_to_bags_and_backpacks(self):
-        locator = ('xpath', '//h1[@class="catalog-heading ng-star-inserted"]')
-        self.click_on_element(self.locator.bags_and_backpacks)
+        locator = ('xpath', '//a[@href="https://rozetka.pl/torby-plecaki-i-etui-na-laptopy-80036/c80036/"]')
+        self.click_on_element(dashboard_locators_dict['go_to_bags_and_backpacks_lokator'])
         return CategoryPage(self._driver)
 
     def go_to_login_form(self):
-        locator = ('xpath', '//a[@class="modal__background modal__background_show_animation"]')
+        locator = ('xpath', '//a[@title="Sklep internetowy Rozetka.pl"]')
         self.click_on_element(self.locator.login)
 
 
