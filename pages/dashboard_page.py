@@ -1,6 +1,6 @@
 from pages.base_page import BasePage
 from pages.category_page import CategoryPage
-from core.dashboard_locators import dashboard_locators_dict
+from core.dashboard_locators import DashboardLocators
 
 class Dashboard(BasePage):
     def __init__(self, driver):
@@ -10,7 +10,7 @@ class Dashboard(BasePage):
 
     def go_to_bags_and_backpacks(self):
         locator = ('xpath', '//a[@href="https://rozetka.pl/torby-plecaki-i-etui-na-laptopy-80036/c80036/"]')
-        self.click_on_element(dashboard_locators_dict['go_to_bags_and_backpacks_lokator'])
+        self.click_on_element(DashboardLocators['go_to_bags_and_backpacks_lokator'])
         return CategoryPage(self._driver)
 
     def go_to_login_form(self):
