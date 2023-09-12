@@ -1,4 +1,4 @@
-from core.base_locators import BaseLocator
+from Rozetka.core.base_locators import BaseLocator
 
 
 class CategoriesLocator(BaseLocator):

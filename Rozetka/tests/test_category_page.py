@@ -1,5 +1,5 @@
 import time
-from pages.base_page import BasePage
+from Rozetka.pages.base_page import BasePage
 
 class categoryPage(BasePage):
     def __init__(self,driver):

@@ -1,9 +1,9 @@
 from selenium.webdriver import Chrome
-from pages.dashboard_page import Dashboard
+from .pages.dashboard_page import Dashboard
 import pytest
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture
 def driver():
     driver = Chrome()
     driver.get('https://rozetka.pl/')
