@@ -1,5 +1,5 @@
 from selenium.webdriver import Chrome
-from .pages.dashboard_page import Dashboard
+from Rozetka.pages.dashboard_page import Dashboard
 import pytest
 
 
