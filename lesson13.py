@@ -1,48 +1,16 @@
-class b:
-    x = 5
-y = b()
-isinstance(y,b)
-
-isinstance(b, object)
-# True
-type(b) == object
-# False
-issubclass(type(b), object)
-# True
-
-
-class a:
-    list1 = []  # При объявлении свойства класса self не применяется
-    def add_units(self, clas, num):
-        for i in range(num):
-            self.list1.append(clas())  # Создаём экземпляр класса clas, вызывая ()
-
-A = a()  # Необходимо создать объект класса, чтобы вызвать его нестатический метод
-
-A.add_units(b, 3)
-
-print(a.list1[1].x)
-
-
-class Employee:
-    """Базовый класс для всех сотрудников"""
-    emp_count = 0
-
-    def __init__(self, name, salary):
+class Chocolate_Milk:
+    def __init__(self, name, brand, price):
         self.name = name
-        self.salary = salary
-        Employee.emp_count += 1
+        self.brand = brand
+        self.price = price
 
-    def display_count(self):
-        print('Всего сотрудников: %d' % Employee.empCount)
+Chocolate1 = Chocolate_Milk("Milka", "AVK", 99)
+Chocolate2 = Chocolate_Milk("Millenium", "Roshen", 55)
+print(Chocolate1.name)
+print(Chocolate2.brand)
 
-    def display_employee(self):
-        print('Имя: {}. Зарплата: {}'.format(self.name, self.salary))
 
-# Это создаст первый объект класса Employee
-emp = Employee("Андрей", 2000)
-emp.display_employee()
-print("Всего сотрудников: %d" % Employee.emp_count)
+
 
 
 
