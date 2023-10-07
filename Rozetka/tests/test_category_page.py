@@ -25,3 +25,7 @@ def test_filtered_new_start_from_categories(categories):
     time.sleep(5)
 
 
+def test_count_products_elements_on_page(categories):
+    list_of_elements = categories.wait_until_list_of_elements_appears(categories.locators.results)
+    assert len(list_of_elements) == 20
+    time.sleep(5)
