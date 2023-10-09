@@ -19,3 +19,7 @@ class BasePage:
 
     def press_enter(self, locator):
         self.wait_until_element_appears(locator).send_keys(Keys.ENTER)
+
+    def return_element(self, locator):
+        return self._driver.find_element(*locator)
+

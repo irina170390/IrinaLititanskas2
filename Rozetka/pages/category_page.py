@@ -1,6 +1,8 @@
+import time
 from Rozetka.pages.base_page import BasePage
 from Rozetka.pages.product_page import ProductPage
 from Rozetka.core.categories_locators import CategoriesLocator
+
 
 class CategoryPage(BasePage):
     def __init__(self, driver):

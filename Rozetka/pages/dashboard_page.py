@@ -16,7 +16,7 @@ class Dashboard(BasePage):
         self.click_on_element(self.locator.login)
 
 
-    def search_for_game(self, message):
+    def search_for_torba(self, message):
         self.click_on_element(self.locator.catalog)
         self.send_keys_into_field(self.locator.search, message)
         self.wait_until_element_appears(self.locator.first_search_result)
