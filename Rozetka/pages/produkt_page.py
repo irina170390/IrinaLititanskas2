@@ -1,7 +1,6 @@
 from Rozetka.pages.base_page import BasePage
 
 class ProductPage(BasePage):
-    def __init__(self,driver):
-        super().__init__(driver)
 
-
+    def __int__(self, driver):
+        super().__int__(driver)

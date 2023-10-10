@@ -7,7 +7,6 @@ import pytest
 @pytest.fixture(scope='session')
 def driver():
     driver = Chrome()
-    driver.get('https://rozetka.pl/')
     driver.maximize_window()
 
     yield driver
@@ -16,6 +15,7 @@ def driver():
 
 @pytest.fixture
 def dashboard(driver):
+    driver.get('https://rozetka.pl/Torby, plecaki i etui na laptopy/')
     yield Dashboard(driver)
 
 
