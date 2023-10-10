@@ -1,9 +1,10 @@
 from selenium.webdriver import Chrome
 from Rozetka.pages.dashboard_page import Dashboard
+from Rozetka.pages.category_page import CategoryPage
 import pytest
 
 
-@pytest.fixture
+@pytest.fixture(scope='session')
 def driver():
     driver = Chrome()
     driver.get('https://rozetka.pl/')
@@ -16,3 +17,13 @@ def driver():
 @pytest.fixture
 def dashboard(driver):
     yield Dashboard(driver)
+
+
+@pytest.fixture
+def categories(driver):
+    driver.get('https://rozetka.pl/torby-plecaki-i-etui-na-laptopy-80036/c80036/')
+    driver.add_cookie({'name':'flag', 'value':'red'})
+    print(f'cookie:{driver.get_cookie("flag")}')
+    driver.execute_script("window.localStorage['flag1'] = 'green'")
+    print(driver.execute_script("return window.localStorage['userWay2'];"))
+    yield CategoryPage(driver)
