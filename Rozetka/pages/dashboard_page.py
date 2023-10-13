@@ -19,10 +19,10 @@ class Dashboard(BasePage):
 
     def search_for_torba(self, message):
         locator = ('xpath', '//input[@_ngcontent-rz-client-c670280251]')
-        self.click_on_element(self.locator.catalog)
-        self.send_keys_into_field(self.locator.search, message)
-        self.wait_until_element_appears(self.locator.first_search_result)
-        self.press_enter(self.locator.search)
+        self.click_on_element(self.locators.catalog)
+        self.send_keys_into_field(self.locators.search, message)
+        self.wait_until_element_appears(self.locators.first_search_result)
+        self.press_enter(self.locators.search)
 
 
 
