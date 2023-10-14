@@ -9,6 +9,7 @@ class Dashboard(BasePage):
 
 
     def go_to_backpacks_and_bags(self):
+        self.click_on_element(self.locators.catalog)
         self.click_on_element(self.locators.bags_and_backpacks)
         return CategoryPage(self._driver)
 
