@@ -16,3 +16,16 @@ def test2_search_for_torba(dashboard):
     time.sleep(5)
 
 
+def test_login(dashboard):
+    dashboard.login_user()
+    time.sleep(10)
+
+
+def test_logout(dashboard):
+    dashboard.login_user()
+    dashboard.logout_user()
+    time.sleep(5)
+
+
+
+

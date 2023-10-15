@@ -11,3 +11,4 @@ def test_luke_with_fixture(people_service, first_people1):
         **response.json()
     )
     assert actual_people == first_people1
+
