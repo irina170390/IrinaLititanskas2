@@ -38,4 +38,3 @@ def test_clear_data(json_converter):
     ]
     json_converter.clear_data()
     assert len(json_converter._JSONConverter__lines) == 0
-    
