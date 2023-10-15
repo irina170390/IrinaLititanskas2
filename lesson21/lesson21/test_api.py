@@ -2,17 +2,15 @@ import requests
 import lesson21.lesson21.infrastructure as infra
 
 
-def test_get_single_object_5():
-    response = infra.get_single_object(5)
+def test_get_single_object_3():
+    response = infra.get_single_object(3)
     assert response.status_code == 200
     expected_data = {
-        "id": "5",
-        "name": "Apple MacBook Air",
-        "data": {
-            "year": 2022,
-            "price": 44.999,
-            "CPU model": "Air 13 M1",
-            "Hard disk size": "1 TB"
+      "id": "3",
+      "name": "Apple iPhone 12 Pro Max",
+      "data": {
+         "color": "Cloudy White",
+         "capacity GB": 512
         }
     }
     actual_data = response.json()
@@ -22,16 +20,17 @@ def test_get_single_object_5():
 def test_get_single_object_3():
     response = infra.get_single_object(3)
     assert response.status_code == 200
-    assert "Apple MacBook Air, 256GB, midnight" in response.text
+    assert "Apple iPhone 12 Pro Max, 512GB, Cloudy White" in response.text
 
 
 def test_add_object():
     data = {
-        "name": "Apple MacBook Air",
-        "data": {
-            "color": "midnight",
-            "generation": "3rd",
-            "price": 44.999
+     "name": "Apple MacBook Pro 16",
+     "data": {
+      "year": 2019,
+      "price": 1849.99,
+      "CPU model": "Intel Core i9",
+      "Hard disk size": "1 TB"
         }
     }
     response, created_object_id = infra.add_object(data)
@@ -43,25 +42,25 @@ def test_add_object():
 
 def test_update_an_object():
     data_to_create = {
-        "name": "Apple MacBook Air",
-        "data": {
-            "year": 2022,
-            "price": 44.999,
-            "CPU model": "Air 13 M1",
-            "Hard disk size": "1 TB",
-            "color": "midnight"
+     "name": "Apple MacBook Pro 16",
+     "data": {
+      "year": 2019,
+      "price": 2049.99,
+      "CPU model": "Intel Core i9",
+      "Hard disk size": "1 TB",
+      "color": "silver"
         }
     }
     response, created_object_id = infra.add_object(data_to_create)
     assert response.status_code == 200
     data_to_update = {
-        "name": "New Apple MacBook Air",
-        "data": {
-            "year": 2022,
-            "price": 44.999,
-            "CPU model": "Air 13 M1",
-            "Hard disk size": "1 TB",
-            "color": "midnight"
+     "name": "Apple MacBook Pro 16",
+     "data": {
+      "year": 2019,
+      "price": 2049.99,
+      "CPU model": "Intel Core i9",
+      "Hard disk size": "1 TB",
+      "color": "silver"
         }
     }
     update_response = infra.update_an_object(created_object_id, data_to_update)
@@ -71,19 +70,18 @@ def test_update_an_object():
 
 def test_patch_an_object():
     data_to_create = {
-        "name": "Apple MacBook Air",
-        "data": {
-            "year": 2022,
-            "price": 44.999,
-            "CPU model": "Air 13 M1",
-            "Hard disk size": "1 TB",
-            "color": "midnight"
+     "name": "Apple MacBook Pro 16 (Updated Name)",
+     "data": {
+      "year": 2019,
+      "price": 1849.99,
+      "CPU model": "Intel Core i9",
+      "Hard disk size": "1 TB"
         }
     }
     response, created_object_id = infra.add_object(data_to_create)
     assert response.status_code == 200
     data_to_patch = {
-        "name": "Apple MacBook Air (Updated Name)"
+        "name": "Apple MacBook Pro 16 (Updated Name)"
     }
     patch_response = infra.patch_an_object(created_object_id, data_to_patch)
     assert patch_response.status_code == 200
