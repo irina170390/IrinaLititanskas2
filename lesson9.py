@@ -136,38 +136,26 @@ class Cleaning (School):
 
 
 
-def select(input_func):
-    def output_func():
-        print("*****************")
-        input_func()
-        print("*****************")
-    return output_func
-
-@select
-def output_func():
-    print("Irina")
+def function_name(func):
+    def title(*args, **kwargs):
+        print(f"Використовую функцію: {func.__name__}")
+        return func(*args, **kwargs)
+    return title
 
 
-output_func()
+@function_name
+def summ(a, b):
+    return a + b
 
 
-def add(x, y):
-    return x + y
+@function_name
+def simbo(a, b):
+    return a - b
 
-def calculate(func, x, y):
-    return func(x, y)
 
-result = calculate(add, 4, 6)
-print(result)  # prints 10
+print(summ(3, 4))
 
-def add(x, y):
-    return x * y
-
-def calculate(func, x, y):
-    return func(x, y)
-
-result = calculate(add, 4, 6)
-print(result)  # prints 10
+print(simbo(99, 50))
 
 
 
